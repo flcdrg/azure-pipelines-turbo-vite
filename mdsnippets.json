@@ -1,0 +1,7 @@
+{
+    "Convention": "InPlaceOverwrite",
+    "ExcludeDirectories": [
+        "node_modules",
+        ".turbo"
+    ]
+}

@@ -4,33 +4,42 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+# begin-snippet: pnpm-config-cache
 variables:
   pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
+# end-snippet
 
 steps:
+# begin-snippet: cache-task-pnpm
   - task: Cache@2
     inputs:
       key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
       path: $(pnpm_config_cache)
       restoreKeys: 'pnpm | "$(Agent.OS)"'
     displayName: Cache pnpm
+# end-snippet
 
-  # https://turborepo.com/docs/guides/ci-vendors/github-actions#remote-caching-with-github-actionscache
+# begin-snippet: cache-task-turbo
   - task: Cache@2
     inputs:
       key: 'turbo | "$(Agent.OS)" | $(Build.SourceVersion)'
       path: .turbo
       restoreKeys: 'turbo | "$(Agent.OS)"'
     displayName: Cache Turbo
+# end-snippet
 
+# begin-snippet: corepack-install
   - script: |
       corepack enable
       corepack install
       pnpm config set store-dir $(pnpm_config_cache)
     displayName: "Script: corepack install"
+# end-snippet
 
+# begin-snippet: pnpm-install-build
   - script: pnpm install
     displayName: "Script: pnpm install"
 
   - script: pnpm build
     displayName: "Script: pnpm build"
+# end-snippet
