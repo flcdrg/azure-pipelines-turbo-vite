@@ -28,6 +28,7 @@ steps:
     displayName: Cache Turbo
 
   - script: |
+      corepack enable
       corepack install
       pnpm config set store-dir $(pnpm_config_cache)
     displayName: "Script: corepack install"
