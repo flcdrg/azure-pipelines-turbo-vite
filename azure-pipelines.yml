@@ -17,6 +17,7 @@ steps:
     inputs:
       key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
       path: $(pnpm_config_cache)
+      restoreKeys: 'pnpm | "$(Agent.OS)"'
     displayName: Cache pnpm
 
   # https://turborepo.com/docs/guides/ci-vendors/github-actions#remote-caching-with-github-actionscache
