@@ -32,8 +32,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       dotenv:
-        specifier: ^17.2.1
-        version: 17.2.1
+        specifier: ^17.2.2
+        version: 17.2.2
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -726,8 +726,8 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
-  dotenv@17.2.1:
-    resolution: {integrity: sha512-kQhDYKZecqnM0fCnzI5eIv5L4cAe/iRI+HqMbO/hbRdTAeXDG+M9FjipUxNfbARuEg4iHIbhnhs78BCHNbSxEQ==}
+  dotenv@17.2.2:
+    resolution: {integrity: sha512-Sf2LSQP+bOlhKWWyhFsn0UsfdK/kCWRv1iuA2gXAwt3dyNabr6QSj00I2V10pidqz69soatm9ZwZvpQMTIOd5Q==}
     engines: {node: '>=12'}
 
   electron-to-chromium@1.5.215:
@@ -1766,7 +1766,7 @@ snapshots:
 
   deep-is@0.1.4: {}
 
-  dotenv@17.2.1: {}
+  dotenv@17.2.2: {}
 
   electron-to-chromium@1.5.215: {}
 
